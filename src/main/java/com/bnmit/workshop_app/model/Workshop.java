@@ -1,12 +1,9 @@
 package com.bnmit.workshop_app.model;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 import java.time.LocalDate;
-
 @Entity
 public class Workshop {
     @Id
@@ -17,20 +14,27 @@ public class Workshop {
     private LocalDate date;
     private String venue;
     public Workshop(){}
-    public Workshop(Integer id, String topic,String speakerName, LocalDate date, String venue) {
+    public Workshop(Integer id, String topic, String speakerName, LocalDate date, String venue) {
         this.id = id;
         this.topic = topic;
         this.speakerName = speakerName;
         this.date = date;
         this.venue = venue;
     }
-
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     public String getSpeakerName() {
@@ -56,13 +60,4 @@ public class Workshop {
     public void setVenue(String venue) {
         this.venue = venue;
     }
-
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
-    }
-
 }

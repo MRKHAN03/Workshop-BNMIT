@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add Workshop</title>
+    <title>Editing Workshop</title>
     <style>
         form{
             max-width: 400px;
@@ -32,18 +32,20 @@
     </style>
 </head>
 <body>
-    <h2>Add New Workshop</h2>
-    <form th:action="@{/save}" th:object="${workshop}" method="post">
-        <label>Topic:</label>
-        <input type="text" th:field="*{topic}" required />
-        <label>Speaker Name:</label>
-        <input type="text" th:field="*{speakerName}" required />
-        <label>Date:</label>
-        <input type="date" th:field="*{date}" required />
-        <label>Venue:</label>
-        <input type="text" th:field="*{venue}" required />
-        <button type="submit">Save</button>
-    </form>
-    <a href="/"><-Back To List</a>
+<h2>Edit Workshop</h2>
+<form th:action="@{/save}" th:object="${workshop}" method="post">
+
+    <input type="hidden" th:field="*{id}"  /> <!--Hidden fine-->
+    <label>Topic:</label>
+    <input type="text" th:field="*{topic}" required />
+    <label>Speaker Name:</label>
+    <input type="text" th:field="*{speakerName}" required />
+    <label>Date:</label>
+    <input type="date" th:field="*{date}" required />
+    <label>Venue:</label>
+    <input type="text" th:field="*{venue}" required />
+    <button type="submit">Update</button>
+</form>
+<a href="/"><-Back To List</a>
 </body>
 </html>

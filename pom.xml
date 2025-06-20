@@ -12,7 +12,7 @@
 	<artifactId>workshop-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>workshop-app</name>
-	<description>simple spring boot CRUD Application with H2 Database</description>
+	<description>Simple Spring Boot CRUD Application with H2 Database</description>
 	<url/>
 	<licenses>
 		<license/>
