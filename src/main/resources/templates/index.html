@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop List</title>
+    <style>
+        table{
+            borrder-collapse : collapse;
+            width :100%;
+            margin-top :  20px;
+        }
+
+        th,td{
+            padding : 10px;
+            border  : 1px solid #aaa;
+        }
+
+        th{
+            background-color : #f2f2f2;
+        }
+        a,button {
+            text-decoration :none;
+            padding : 4px;
+            border-radius:5px;
+        }
+        .add-btn {
+            background-color : #50C878;
+            color :white;
+        }
+
+        .edit-btn {
+            background-color : #2196F3;
+            color :white;
+        }
+
+        .delete-btn {
+            background-color : #f44336;
+            color :white;
+        }
+    </style>
+</head>
+<body>
+    <h2>BNMIT WORKSHOP APP</h2>
+<a href="/add" class="add-btn">+Add workshop</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Topic</th>
+            <th>Speaker Name</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="workshop : ${workshops}">
+            <td th:text="${workshop.id}">1</td>
+            <td th:text="${workshop.topic}"> Sample Topic</td>
+            <td th:text="${workshop.speakerName}">Speaker</td>
+            <td th:text="${workshop.date}">2025-06-20</td>
+            <td th:text="${workshop.venue}">Venue</td>
+
+            <td>
+                <a th:href="@{'/edit/'} + ${workshop.id" class="edit-btn">Edit</a>
+                <a th:href="@{'/delete/'} + ${workshop.id" class="delete-btn">Delete</a>
+            </td>
+        </tr>
+
+
+
+    </tbody>
+</table>
+</body>
+</html>

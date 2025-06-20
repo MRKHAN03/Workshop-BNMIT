@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Workshop</title>
+    <style>
+        form{
+            max-width: 400px;
+            margin: auto;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+        }
+        input{
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        button{
+           margin-top: 15px;
+           padding: 8px, 16px;
+           background-color: #4CAF50;
+           color: white;
+           border: none;
+           border-radius: 5px;
+        }
+        a{
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add new Workshop</h2>
+    <form th:action="@{/save}" th:object="${workshop}" method="post">
+        <label>Topic:</label>
+        <input type="text" th:field="*{topics}" required />
+        <label>Speaker Name:</label>
+        <input type="text" th:field="*{speakerName}" required />
+        <label>Date:</label>
+        <input type="text" th:field="*{date}" required />
+        <label>Venue:</label>
+        <input type="text" th:field="*{venue}" required />
+        <button type="submit">Save</button>
+    </form>
+<a href="/"><--Back-to-list</a>
+</body>
+</html>
